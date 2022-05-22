@@ -9,6 +9,8 @@ Object {
 }
 `;
 
+exports[`Animal Service When a request to delete an animal is made should return the correct data 1`] = `""`;
+
 exports[`Animal Service When a request to get an animal is made should return the correct data 1`] = `
 Object {
   "breed": "Bengali",

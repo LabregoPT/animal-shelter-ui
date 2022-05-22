@@ -96,7 +96,7 @@ describe('Animal Service', () => {
 			breed: "Criolla",
 			gender: "Female",
 			vaccinated: true,
-			vaccines: ["Polio","Rabia"]
+			vaccines: ["Polio", "Rabia"]
 		}
 		beforeEach(async () => {
 			await provider.addInteraction({
@@ -121,12 +121,32 @@ describe('Animal Service', () => {
 			});
 		});
 		test("should return the correct data", async () => {
-			const response = await AnimalController.updateAnimal("Kiara",testBody);
+			const response = await AnimalController.updateAnimal("Kiara", testBody);
 			expect(response.data).toMatchSnapshot();
 			await provider.verify();
 		});
 	});
 
-	
+	describe("When a request to delete an animal is made", () => {
+		beforeEach(async () => {
+			await provider.addInteraction({
+				uponReceiving: "a request to delete an animal",
+				state: "has an animal to delete",
+				withRequest: {
+					method: "DELETE",
+					path: "/animals/Kiara",
+				},
+				willRespondWith: {
+					status: 204,
+				},
+			});
+		});
+		test("should return the correct data", async () => {
+			const response = await AnimalController.delete("Kiara");
+			expect(response.data).toMatchSnapshot();
+			await provider.verify();
+		});
+	});
+
 	afterAll(() => provider.finalize());
 });
