@@ -71,7 +71,7 @@ describe('Animal Service', () => {
 		beforeEach(async () => {
 			await provider.addInteraction({
 				uponReceiving: "a request to add an animal",
-				state: "has an animal to update",
+				state: "has no animals",
 				withRequest: {
 					method: "POST",
 					path: "/animals",
