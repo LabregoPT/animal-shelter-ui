@@ -127,5 +127,6 @@ describe('Animal Service', () => {
 		});
 	});
 
+	
 	afterAll(() => provider.finalize());
 });
