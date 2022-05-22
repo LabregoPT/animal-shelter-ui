@@ -30,11 +30,12 @@ export const AnimalController = {
             url: `animals/${name}`,
         });
     },
-    updateAnimal(name) {
+    updateAnimal(name, animalData) {
         return axios({
             method: 'PUT',
             baseURL: process.env.API,
             url: `animals/${name}`,
+            data: animalData,
         });
     }
 }

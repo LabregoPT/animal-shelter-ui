@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Animal Service When a request to add an animal is made should return the correct data 1`] = `
+Object {
+  "breed": "Criolla",
+  "gender": "Female",
+  "name": "Kiara",
+  "vaccinated": false,
+}
+`;
+
+exports[`Animal Service When a request to get an animal is made should return the correct data 1`] = `
+Object {
+  "breed": "Bengali",
+  "gender": "Female",
+  "name": "Kiara",
+  "vaccinated": true,
+}
+`;
+
+exports[`Animal Service When a request to list all animals is made should return the correct data 1`] = `
+Array [
+  Object {
+    "breed": "Bengali",
+    "gender": "Female",
+    "name": "manchas",
+    "vaccinated": true,
+  },
+]
+`;
+
+exports[`Animal Service When a request to update an animal is made should return the correct data 1`] = `
+Object {
+  "breed": "Criolla",
+  "gender": "Female",
+  "id": 6,
+  "name": "Kiara",
+  "vaccinated": true,
+  "vaccines": Array [
+    "Polio",
+    "Rabia",
+  ],
+}
+`;
